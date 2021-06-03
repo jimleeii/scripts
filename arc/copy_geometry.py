@@ -1,3 +1,6 @@
+# This file runs under ~\Python27\ArcGIS10.5\python.exe
+# Version: 2.7.13
+
 import arcpy
 
 #Set source
@@ -8,7 +11,7 @@ fc = "dbo.STATIONSERIES"
 geometries = {key:value for (key,value) in arcpy.da.SearchCursor(fc, ['LineloopId', 'SHAPE@'])}
 
 #Set destination
-arcpy.env.workspace = r'D:\Test\key\irascentreline.gdb'
+arcpy.env.workspace = r'D:\Test\key\0519\main\irascenterline\v101\irascentreline.gdb'
 outfc = 'Centreline'
 
 #Empty list to store ids in outfc not found in fc

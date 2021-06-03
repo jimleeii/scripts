@@ -4,7 +4,7 @@
 import arcpy
 
 # Set parameters
-fp = r'D:\Test\key\work\KEY_IRASV5_PROD.mxd'
+fp = r'D:\Test\key\0519\attach\KEY_IRASV5_PROD\v101\KEY_IRASV5_PROD_20210513.mxd'
 lf = r'D:\Test\key\layers'
 
 # Delete files in folder
