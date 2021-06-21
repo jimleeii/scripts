@@ -6,11 +6,14 @@
 import os
 import sys
 import arcpy
- 
+
+print(arcpy.GetParameterAsText(0))
+print(arcpy.GetParameterAsText(1))
+print(arcpy.GetParameterAsText(2))
 # Get input arguments
 #print(sys.argv)
-os.remove("D:\\Test\\sde\\test.sde")
-arcpy.CreateDatabaseConnection_management("D:\\Test\\sde", "test.sde", "SQL_SERVER", "SQL2017", "OPERATING_SYSTEM_AUTH", "#", "#", "#", "KEY_IRASV5_Upstream", "#", "#", "dbo.DEFAULT")
+# os.remove("D:\\Test\\sde\\test.sde")
+# arcpy.CreateDatabaseConnection_management("D:\\Test\\sde", "test.sde", "SQL_SERVER", "SQL2017", "OPERATING_SYSTEM_AUTH", "#", "#", "#", "KEY_IRASV5_Upstream", "#", "#", "dbo.DEFAULT")
 
 # Set environment settings
 #arcpy.env.workspace = "C:/Users/wei_li/OneDrive - dynamicrisk.net/Desktop/KeyeraUpdate_20210218.gdb"
