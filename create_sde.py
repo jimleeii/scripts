@@ -62,14 +62,14 @@ def main(argv):
 
     fullname = path + '\\' + filename
 
-    # print 'SDE file is ', fullname
-    # print 'Database Platform is ', platform
-    # print 'Instance is ', instance
-    # print 'Authentication is ', authentication
-    # print 'Username is ', username
-    # print 'Password is ', password
-    # print 'Database is ', database
-    # print 'Version is ', version
+    print('SDE file is ', fullname)
+    print('Database Platform is ', platform)
+    print('Instance is ', instance)
+    print('Authentication is ', authentication)
+    print('Username is ', username)
+    print('Password is ', password)
+    print('Database is ', database)
+    print('Version is ', version)
     
     if os.path.exists(fullname):
         os.remove(fullname)
