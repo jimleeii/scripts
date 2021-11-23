@@ -1,3 +1,14 @@
+# Usage info:
+# ~\python.exe find_point_alone_line.py <workspacename> <dataset> <featureclassname> <destworkspacename> <destdataset>
+# workspacename: Full path of database connection.  e.x. D:\Test\sde\KEY_IRASV5_Upstream.sde
+# dataset: Spatial dataset name in database. e.x. LineReferenceSystem
+# featureclassname: Featureclass name in database. e.x. STATIONSERIES
+# destworkspacename: Full path of export database connection. e.x. D:\Test\lrs\KeyeraPlay.gdb
+# destdataset: Spatial dataset name in export database. e.x. LineReferenceSystem
+# destfeatureclassname: Export featureclass name. e.x. PIPESEGMENTFC
+# destFKname: Export FK field name. e.x. UpstreamPipeSegmentId
+
+
 import arcpy
 import os
 import pyodbc
