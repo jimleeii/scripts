@@ -1,5 +1,5 @@
 # Usage info:
-# ~\python.exe find_point_alone_line.py <workspacename> <dataset> <featureclassname> <destworkspacename> <destdataset>
+# ~\python.exe find_point_alone_line.py <workspacename> <dataset> <featureclassname> <destworkspacename> <destdataset> <UpstreamPipeSegmentId> <destFKname>
 # workspacename: Full path of database connection.  e.x. D:\Test\sde\KEY_IRASV5_Upstream.sde
 # dataset: Spatial dataset name in database. e.x. LineReferenceSystem
 # featureclassname: Featureclass name in database. e.x. STATIONSERIES
@@ -37,8 +37,8 @@ def toPercentage(geo, dist):
     length = geo.lastPoint.M
     return dist / length
 
-getDistinctAvailableSSID = 'SELECT DISTINCT BeginStationSeriesId FROM PipeSegment WHERE BeginStationSeriesId = EndStationSeriesId'
-getSSInfoBySSID = 'SELECT Id, BeginStationSeriesId, BeginStationNum, EndStationNum FROM PipeSegment WHERE BeginStationSeriesId = EndStationSeriesId ORDER BY BeginStationSeriesId, BeginStationNum, EndStationNum'
+getDistinctAvailableSSID = 'SELECT DISTINCT BeginStationSeriesId FROM InlineInspectionRange WHERE BeginStationSeriesId = EndStationSeriesId'
+getSSInfoBySSID = 'SELECT Id, BeginStationSeriesId, BeginStationNum, EndStationNum FROM InlineInspectionRange WHERE BeginStationSeriesId = EndStationSeriesId ORDER BY BeginStationSeriesId, BeginStationNum, EndStationNum'
 
 # Workspace name for geodatabase (e.x. r'D:\Test\sde\KEY_IRASV5_Upstream.sde', r'D:\Test\key\0519\main\irascenterline\v101\irascentreline.gdb')
 workspacename = r'D:\Test\sde\SQL2017_tra.sde' if len(arcpy.GetParameterAsText(0)) == 0 else arcpy.GetParameterAsText(0)
@@ -56,10 +56,10 @@ destworkspacename = workspacename if len(arcpy.GetParameterAsText(3)) == 0 else 
 destdataset = dataset if len(arcpy.GetParameterAsText(4)) == 0 else arcpy.GetParameterAsText(4)
 
 # Featureclass name for export geodatabase (e.x. 'dbo.STATIONSERIES', 'Centreline')
-destfeatureclassname = 'PIPESEGMENTFC' if len(arcpy.GetParameterAsText(5)) == 0 else arcpy.GetParameterAsText(5)
+destfeatureclassname = 'INLINEINSPECTIONRANGEFC' if len(arcpy.GetParameterAsText(5)) == 0 else arcpy.GetParameterAsText(5)
 
 # Featureclasse FK name for export geodatabase
-destFKname = 'UpstreamPipeSegmentId' if len(arcpy.GetParameterAsText(6)) == 0 else arcpy.GetParameterAsText(6)
+destFKname = 'INLINEINSPECTIONRANGEId' if len(arcpy.GetParameterAsText(6)) == 0 else arcpy.GetParameterAsText(6)
 
 # Create connection from workspace
 desc = arcpy.Describe(workspacename)
