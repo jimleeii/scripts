@@ -8,6 +8,14 @@ import sys
 #import arcpy
 import cx_Oracle
 import time
+from create_sde import main
+
+import options_reader
+o = options_reader.Options(version='10.0.0.10', help='This is a test', parameters={'-i': '--install', '-u': '--uninstall'})
+print(options_reader.read(o))
+
+
+sys.exit()
 
 #print(arcpy.GetParameterAsText(0))
 #print(arcpy.GetParameterAsText(1))
